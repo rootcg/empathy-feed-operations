@@ -1,5 +1,6 @@
 package efo;
 
+import efo.operations.OptionalOperation;
 import efo.operations.TerminalOperation;
 import efo.operations.TransformOperation;
 
@@ -24,6 +25,10 @@ public class Transformer {
 
 	private List<OperationResult> transform(Map<String, Object> element, LinkedList<Operation> operationList) {
 		Operation operation = operationList.poll();
+
+		if (operation instanceof OptionalOperation) {
+			operation = ((OptionalOperation) operation).apply(element);
+		}
 
 		if (operation instanceof TerminalOperation) {
 			return Collections.singletonList(((TerminalOperation) operation).apply(element));

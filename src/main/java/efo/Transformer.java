@@ -7,7 +7,7 @@ import efo.operations.TransformOperation;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class Transformer {
+public final class Transformer {
 
 	private final LinkedList<Operation> operationList;
 

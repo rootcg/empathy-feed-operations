@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class FilterFieldsTest {
 
 	@Test
-	public void updateOperation() {
+	public void apply_shouldFilterFields() {
 		Transformer transformer = new Transformer(
 				new FilterFields("name", "color"),
 				new UpdateOperation("name")

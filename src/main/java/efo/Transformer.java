@@ -13,6 +13,10 @@ public final class Transformer {
 
 	public Transformer(List<Operation> operations) {
 		operationList = new LinkedList<>(operations);
+
+		if(!(operationList.getLast() instanceof TerminalOperation)) {
+			throw new IllegalArgumentException("The last operation should be a terminal operation");
+		}
 	}
 
 	public Transformer(Operation... operations) {

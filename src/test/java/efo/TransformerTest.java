@@ -1,5 +1,5 @@
-import efo.OperationResult;
-import efo.Transformer;
+package efo;
+
 import efo.operations.OptionalOperation;
 import efo.operations.terminal.DeleteOperation;
 import efo.operations.terminal.UpdateOperation;

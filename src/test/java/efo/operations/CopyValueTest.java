@@ -17,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class CopyValueTest {
 
 	@Test
-	public void apply_shouldCopyValues() {
+	public void shouldCopyValues() {
 		Transformer transformer = new Transformer(
 				new CopyValue("name", "newName"),
 				new UpdateOperation("id")
@@ -38,7 +38,7 @@ public class CopyValueTest {
 	}
 
 	@Test
-	public void apply_fieldNotPresent_shouldFail() {
+	public void fieldNotPresent_shouldFail() {
 		Transformer transformer = new Transformer(
 				new CopyValue("name", "newName"),
 				new UpdateOperation("id")
@@ -51,7 +51,7 @@ public class CopyValueTest {
 	}
 
 	@Test
-	public void apply_nullableFieldNotPresent_shouldCopyValues() {
+	public void nullableFieldNotPresent_shouldCopyValues() {
 		Transformer transformer = new Transformer(
 				new CopyValue("name", "newName").nullable(),
 				new UpdateOperation("id")

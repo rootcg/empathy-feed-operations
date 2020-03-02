@@ -2,6 +2,7 @@ package efo.operations;
 
 import efo.OperationResult;
 import efo.Transformer;
+import efo.operations.terminal.UpdateOperation;
 import efo.operations.transform.FilterFields;
 import org.junit.jupiter.api.Test;
 
@@ -17,7 +18,8 @@ public class FilterFieldsTest {
 	@Test
 	public void updateOperation() {
 		Transformer transformer = new Transformer(
-				new FilterFields("name", "color")
+				new FilterFields("name", "color"),
+				new UpdateOperation("name")
 		);
 
 		Map<String, Object> source = new HashMap<>();

@@ -20,27 +20,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class TransformerTest {
 
 	@Test
-	public void updateOperation() {
-		Transformer transformer = new Transformer(
-				new CopyValue("name", "newName"),
-				new UpdateOperation("id")
-		);
-
-		Map<String, Object> source = new HashMap<>();
-		source.put("id", 1);
-		source.put("name", "Cristian");
-
-		Map<String, Object> expected = new HashMap<>();
-		expected.put("id", 1);
-		expected.put("newName", "Cristian");
-
-		List<OperationResult> result = transformer.transform(source);
-		assertEquals(1, result.size());
-		assertEquals(UPDATE, result.get(0).getOperationType());
-		assertEquals(expected, result.get(0).getContent());
-	}
-
-	@Test
 	public void duplicateOperation() {
 		Transformer transformer = new Transformer(
 				new CopyValue("name", "newName"),

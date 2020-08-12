@@ -1,4 +1,4 @@
-# empathy-feed-operations
+# xhapex
 Given this pipeline: 
   - CopyValue name to localName
   - Duplicate by color

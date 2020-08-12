@@ -1,12 +1,10 @@
-package efo.operations.terminal;
-
-import efo.OperationResult;
-import efo.operations.TerminalOperation;
+package rootcg.xhapex.operations.terminal;
 
 import java.util.Collections;
 import java.util.Map;
-
-import static efo.OperationType.DELETE;
+import rootcg.xhapex.OperationResult;
+import rootcg.xhapex.OperationType;
+import rootcg.xhapex.operations.TerminalOperation;
 
 public final class DeleteOperation implements TerminalOperation {
 
@@ -23,7 +21,7 @@ public final class DeleteOperation implements TerminalOperation {
 			throw new IllegalStateException("ID field not found: " + idField);
 		}
 
-		return new OperationResult<Object, Object>(DELETE, id, Collections.emptyList());
+		return new OperationResult<Object, Object>(OperationType.DELETE, id, Collections.emptyList());
 	}
 
 }

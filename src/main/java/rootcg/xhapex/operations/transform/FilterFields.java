@@ -1,8 +1,11 @@
-package efo.operations.transform;
+package rootcg.xhapex.operations.transform;
 
-import efo.operations.TransformOperation;
-
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import rootcg.xhapex.operations.TransformOperation;
 
 public final class FilterFields implements TransformOperation {
 

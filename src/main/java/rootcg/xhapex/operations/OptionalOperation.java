@@ -1,10 +1,9 @@
-package efo.operations;
-
-import efo.Operation;
-import efo.operations.transform.IdentityOperation;
+package rootcg.xhapex.operations;
 
 import java.util.Map;
 import java.util.function.Predicate;
+import rootcg.xhapex.Operation;
+import rootcg.xhapex.operations.transform.IdentityOperation;
 
 public class OptionalOperation implements Operation<Operation> {
 

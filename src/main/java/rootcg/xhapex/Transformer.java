@@ -1,11 +1,15 @@
-package efo;
+package rootcg.xhapex;
 
-import efo.operations.OptionalOperation;
-import efo.operations.TerminalOperation;
-import efo.operations.TransformOperation;
-
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
+import rootcg.xhapex.operations.OptionalOperation;
+import rootcg.xhapex.operations.TerminalOperation;
+import rootcg.xhapex.operations.TransformOperation;
 
 public final class Transformer {
 

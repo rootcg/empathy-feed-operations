@@ -1,18 +1,18 @@
-package efo.operations;
+package rootcg.xhapex.operations;
 
-import efo.OperationResult;
-import efo.Transformer;
-import efo.operations.terminal.UpdateOperation;
-import efo.operations.transform.CopyValue;
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import static efo.OperationType.UPDATE;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import rootcg.xhapex.OperationResult;
+import rootcg.xhapex.OperationType;
+import rootcg.xhapex.Transformer;
+import rootcg.xhapex.operations.terminal.UpdateOperation;
+import rootcg.xhapex.operations.transform.CopyValue;
 
 public class CopyValueTest {
 
@@ -33,7 +33,7 @@ public class CopyValueTest {
 
 		List<OperationResult> result = transformer.transform(source);
 		assertEquals(1, result.size());
-		assertEquals(UPDATE, result.get(0).getOperationType());
+		Assertions.assertEquals(OperationType.UPDATE, result.get(0).getOperationType());
 		assertEquals(expected, result.get(0).getContent());
 	}
 
@@ -66,7 +66,7 @@ public class CopyValueTest {
 
 		List<OperationResult> result = transformer.transform(source);
 		assertEquals(1, result.size());
-		assertEquals(UPDATE, result.get(0).getOperationType());
+		Assertions.assertEquals(OperationType.UPDATE, result.get(0).getOperationType());
 		assertEquals(expected, result.get(0).getContent());
 	}
 

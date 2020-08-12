@@ -1,11 +1,10 @@
-package efo.operations.terminal;
+package rootcg.xhapex.operations.terminal;
 
-import efo.OperationResult;
-import efo.operations.TerminalOperation;
+import static rootcg.xhapex.OperationType.UPDATE;
 
 import java.util.Map;
-
-import static efo.OperationType.UPDATE;
+import rootcg.xhapex.OperationResult;
+import rootcg.xhapex.operations.TerminalOperation;
 
 public final class UpdateOperation implements TerminalOperation {
 

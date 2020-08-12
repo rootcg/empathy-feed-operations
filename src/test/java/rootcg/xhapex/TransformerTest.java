@@ -1,21 +1,19 @@
-package efo;
+package rootcg.xhapex;
 
-import efo.operations.OptionalOperation;
-import efo.operations.terminal.DeleteOperation;
-import efo.operations.terminal.UpdateOperation;
-import efo.operations.transform.CopyValue;
-import efo.operations.transform.DuplicateByField;
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-
-import static efo.OperationType.DELETE;
-import static efo.OperationType.UPDATE;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import rootcg.xhapex.operations.OptionalOperation;
+import rootcg.xhapex.operations.terminal.DeleteOperation;
+import rootcg.xhapex.operations.terminal.UpdateOperation;
+import rootcg.xhapex.operations.transform.CopyValue;
+import rootcg.xhapex.operations.transform.DuplicateByField;
 
 public class TransformerTest {
 
@@ -35,7 +33,7 @@ public class TransformerTest {
 		List<String> expectedIds = Arrays.asList("1-red", "1-blue", "1-pink");
 
 		List<OperationResult> result = transformer.transform(source);
-		result.forEach(r -> assertEquals(UPDATE, r.getOperationType()));
+		result.forEach(r -> Assertions.assertEquals(OperationType.UPDATE, r.getOperationType()));
 		assertEquals(expectedIds, result.stream().map(OperationResult::getId).collect(Collectors.toList()));
 	}
 
@@ -56,8 +54,8 @@ public class TransformerTest {
 		List<String> expectedIds = Arrays.asList("1-red", "1-blue", "1-pink");
 
 		List<OperationResult> result = transformer.transform(source);
-		assertEquals(1, result.stream().filter(r -> r.getOperationType().equals(UPDATE)).count());
-		assertEquals(2, result.stream().filter(r -> r.getOperationType().equals(DELETE)).count());
+		assertEquals(1, result.stream().filter(r -> r.getOperationType().equals(OperationType.UPDATE)).count());
+		assertEquals(2, result.stream().filter(r -> r.getOperationType().equals(OperationType.DELETE)).count());
 		assertEquals(expectedIds, result.stream().map(OperationResult::getId).collect(Collectors.toList()));
 
 	}

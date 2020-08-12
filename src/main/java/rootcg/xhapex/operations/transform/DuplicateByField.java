@@ -1,11 +1,10 @@
-package efo.operations.transform;
-
-import efo.operations.TransformOperation;
+package rootcg.xhapex.operations.transform;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import rootcg.xhapex.operations.TransformOperation;
 
 public final class DuplicateByField implements TransformOperation {
 
